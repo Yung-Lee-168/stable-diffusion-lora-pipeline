@@ -1067,7 +1067,20 @@ class NetworkTrainer:
                     accelerator.log(logs, step=global_step)
 
                 if global_step >= args.max_train_steps:
+                    logger.info(f"Training completed: reached max_train_steps {args.max_train_steps} at global_step {global_step}")
+                    # 🎯 確保精確停止：立即保存當前狀態並退出
+                    accelerator.wait_for_everyone()
+                    if accelerator.is_main_process:
+                        # 保存最終模型
+                        ckpt_name = train_util.get_step_ckpt_name(args, "." + args.save_model_as, global_step)
+                        save_model(ckpt_name, accelerator.unwrap_model(network), global_step, epoch)
+                        logger.info(f"Final model saved at step {global_step}: {ckpt_name}")
                     break
+
+            # Check if we reached max_train_steps and should stop training completely
+            if global_step >= args.max_train_steps:
+                logger.info(f"Breaking out of epoch loop: max_train_steps {args.max_train_steps} reached")
+                break
 
             if args.logging_dir is not None:
                 logs = {"loss/epoch": loss_recorder.moving_average}
