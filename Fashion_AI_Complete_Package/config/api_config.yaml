@@ -1,0 +1,147 @@
+# Fashion AI Complete Package - API 配置
+# WebUI API 相關設置
+
+# API 端點配置
+api_endpoints:
+  # 基本 API
+  txt2img: "/sdapi/v1/txt2img"
+  img2img: "/sdapi/v1/img2img"
+  options: "/sdapi/v1/options"
+  progress: "/sdapi/v1/progress"
+  
+  # 模型管理
+  models: "/sdapi/v1/sd-models"
+  refresh_models: "/sdapi/v1/refresh-checkpoints"
+  
+  # 其他功能
+  interrogate: "/sdapi/v1/interrogate"
+  embeddings: "/sdapi/v1/embeddings"
+  
+# 請求配置
+request_settings:
+  timeout: 120
+  max_retries: 3
+  retry_delay: 2
+  verify_ssl: false
+  
+# 默認參數
+default_params:
+  txt2img:
+    prompt: ""
+    negative_prompt: "blurry, low quality, bad anatomy, deformed, distorted"
+    steps: 20
+    cfg_scale: 7.5
+    width: 512
+    height: 512
+    sampler_name: "DPM++ 2M Karras"
+    batch_size: 1
+    n_iter: 1
+    seed: -1
+    restore_faces: false
+    tiling: false
+    
+  img2img:
+    prompt: ""
+    negative_prompt: "blurry, low quality, bad anatomy, deformed, distorted"
+    steps: 20
+    cfg_scale: 7.5
+    width: 512
+    height: 512
+    sampler_name: "DPM++ 2M Karras"
+    batch_size: 1
+    n_iter: 1
+    seed: -1
+    denoising_strength: 0.75
+    
+# 品質預設
+quality_presets:
+  draft:
+    steps: 10
+    cfg_scale: 5.0
+    width: 256
+    height: 256
+    
+  standard:
+    steps: 20
+    cfg_scale: 7.5
+    width: 512
+    height: 512
+    
+  high_quality:
+    steps: 30
+    cfg_scale: 8.0
+    width: 768
+    height: 768
+    
+  ultra_high:
+    steps: 50
+    cfg_scale: 9.0
+    width: 1024
+    height: 1024
+    
+# 採樣器配置
+samplers:
+  recommended:
+    - "DPM++ 2M Karras"
+    - "DPM++ SDE Karras"
+    - "Euler a"
+    - "DDIM"
+    
+  fast:
+    - "DPM++ 2M Karras"
+    - "DPM++ SDE Karras"
+    
+  quality:
+    - "DPM++ 2M Karras"
+    - "DPM++ SDE Karras"
+    - "DDIM"
+    
+# 尺寸預設
+size_presets:
+  square:
+    - [512, 512]
+    - [768, 768]
+    - [1024, 1024]
+    
+  portrait:
+    - [512, 768]
+    - [576, 832]
+    - [640, 960]
+    
+  landscape:
+    - [768, 512]
+    - [832, 576]
+    - [960, 640]
+    
+# 批次處理配置
+batch_settings:
+  max_concurrent_requests: 2
+  request_delay: 1  # 秒
+  timeout_per_image: 300  # 秒
+  max_queue_size: 10
+  
+# 錯誤處理
+error_handling:
+  max_retries: 3
+  retry_delay: 5
+  timeout_handling: "skip"  # skip, retry, fail
+  
+  # 錯誤代碼處理
+  error_codes:
+    400: "skip"  # 跳過無效請求
+    404: "retry"  # 重試找不到的資源
+    500: "retry"  # 重試服務器錯誤
+    503: "retry"  # 重試服務不可用
+    
+# 快取配置
+cache_settings:
+  enable_response_cache: true
+  cache_duration: 3600  # 秒
+  max_cache_size: 1000  # MB
+  
+# 監控配置
+monitoring:
+  enable_request_logging: true
+  log_response_time: true
+  log_error_details: true
+  enable_metrics: true

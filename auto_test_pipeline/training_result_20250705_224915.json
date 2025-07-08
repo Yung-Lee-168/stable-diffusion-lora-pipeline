@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "start_time": "2025-07-05T22:33:10.359111",
+  "end_time": "2025-07-05T22:49:15.304715",
+  "duration_seconds": 964.945604,
+  "final_model": "last.safetensors",
+  "model_size_mb": 72.10930633544922,
+  "continue_from_checkpoint": false,
+  "training_params": {
+    "max_train_steps": 100,
+    "learning_rate": 5e-05,
+    "network_dim": 32,
+    "save_every_n_epochs": 50
+  }
+}

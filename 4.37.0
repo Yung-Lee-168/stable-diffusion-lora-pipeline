@@ -1,0 +1,34 @@
+Requirement already satisfied: transformers in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (4.30.2)
+Collecting transformers
+  Using cached transformers-4.53.0-py3-none-any.whl.metadata (39 kB)
+Requirement already satisfied: filelock in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (3.13.1)
+Requirement already satisfied: huggingface-hub<1.0,>=0.30.0 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (0.33.1)
+Requirement already satisfied: numpy>=1.17 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (25.0)
+Requirement already satisfied: pyyaml>=5.1 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (2024.11.6)
+Requirement already satisfied: requests in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (2.32.4)
+Collecting tokenizers<0.22,>=0.21 (from transformers)
+  Using cached tokenizers-0.21.2-cp39-abi3-win_amd64.whl.metadata (6.9 kB)
+Requirement already satisfied: safetensors>=0.4.3 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from transformers) (4.67.1)
+Requirement already satisfied: fsspec>=2023.5.0 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from huggingface-hub<1.0,>=0.30.0->transformers) (2024.6.1)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from huggingface-hub<1.0,>=0.30.0->transformers) (4.12.2)
+Requirement already satisfied: colorama in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from tqdm>=4.27->transformers) (0.4.6)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from requests->transformers) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from requests->transformers) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from requests->transformers) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\yung_\anaconda3\envs\tryon_sd\lib\site-packages (from requests->transformers) (2025.6.15)
+Using cached transformers-4.53.0-py3-none-any.whl (10.8 MB)
+Using cached tokenizers-0.21.2-cp39-abi3-win_amd64.whl (2.5 MB)
+Installing collected packages: tokenizers, transformers
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.13.3
+    Uninstalling tokenizers-0.13.3:
+      Successfully uninstalled tokenizers-0.13.3
+  Attempting uninstall: transformers
+    Found existing installation: transformers 4.30.2
+    Uninstalling transformers-4.30.2:
+      Successfully uninstalled transformers-4.30.2
+
+Successfully installed tokenizers-0.21.2 transformers-4.53.0

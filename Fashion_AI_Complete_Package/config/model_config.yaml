@@ -1,0 +1,192 @@
+# Fashion AI Complete Package - 模型配置
+# 各種 AI 模型的配置設置
+
+# Stable Diffusion 模型配置
+stable_diffusion:
+  # 預設模型
+  default_model: "v1-5-pruned-emaonly.safetensors"
+  
+  # 模型路徑
+  model_dir: "./models/Stable-diffusion"
+  vae_dir: "./models/VAE"
+  lora_dir: "./models/Lora"
+  
+  # 推薦模型列表
+  recommended_models:
+    - name: "Stable Diffusion v1.5"
+      file: "v1-5-pruned-emaonly.safetensors"
+      url: "https://huggingface.co/runwayml/stable-diffusion-v1-5"
+      description: "標準 SD v1.5 模型，適合一般用途"
+      
+    - name: "Realistic Vision"
+      file: "realisticVisionV60B1_v60B1VAE.safetensors"
+      url: "https://civitai.com/models/4201/realistic-vision-v60-b1"
+      description: "寫實風格模型，適合時尚攝影"
+      
+    - name: "DreamShaper"
+      file: "dreamshaper_8.safetensors"
+      url: "https://civitai.com/models/4384/dreamshaper"
+      description: "夢幻風格模型，適合藝術創作"
+      
+  # VAE 配置
+  vae:
+    default: "vae-ft-mse-840000-ema-pruned.safetensors"
+    recommended:
+      - "vae-ft-mse-840000-ema-pruned.safetensors"
+      - "sd-vae-ft-mse-original.safetensors"
+      
+# FashionCLIP 模型配置
+fashion_clip:
+  model_name: "patrickjohncyh/fashion-clip"
+  cache_dir: "./models/fashion_clip"
+  
+  # 分析配置
+  analysis:
+    confidence_threshold: 0.3
+    max_features: 10
+    batch_size: 8
+    
+  # 類別映射
+  categories:
+    clothing:
+      - "dress"
+      - "top"
+      - "bottom"
+      - "outerwear"
+      - "underwear"
+      
+    accessories:
+      - "bag"
+      - "jewelry"
+      - "hat"
+      - "scarf"
+      - "belt"
+      
+    footwear:
+      - "shoes"
+      - "boots"
+      - "sneakers"
+      - "sandals"
+      - "heels"
+      
+  # 風格類別
+  styles:
+    - "elegant"
+    - "casual"
+    - "formal"
+    - "sporty"
+    - "bohemian"
+    - "vintage"
+    - "modern"
+    - "minimalist"
+    - "romantic"
+    - "edgy"
+    
+  # 顏色類別
+  colors:
+    basic:
+      - "red"
+      - "blue"
+      - "green"
+      - "yellow"
+      - "purple"
+      - "pink"
+      - "orange"
+      - "brown"
+      - "black"
+      - "white"
+      - "gray"
+      
+    extended:
+      - "navy"
+      - "burgundy"
+      - "emerald"
+      - "coral"
+      - "lavender"
+      - "turquoise"
+      - "gold"
+      - "silver"
+      - "beige"
+      - "cream"
+      
+# 自動下載配置
+auto_download:
+  enable: true
+  check_on_startup: true
+  
+  # 必要模型
+  required_models:
+    - type: "stable_diffusion"
+      name: "v1-5-pruned-emaonly.safetensors"
+      url: "https://huggingface.co/runwayml/stable-diffusion-v1-5"
+      size: "4GB"
+      
+    - type: "vae"
+      name: "vae-ft-mse-840000-ema-pruned.safetensors"
+      url: "https://huggingface.co/stabilityai/sd-vae-ft-mse-original"
+      size: "335MB"
+      
+  # 下載設置
+  download_settings:
+    max_concurrent: 2
+    resume_partial: true
+    verify_checksum: true
+    timeout: 3600
+    
+# 模型切換配置
+model_switching:
+  enable_auto_switch: true
+  switch_timeout: 60
+  
+  # 任務類型對應的推薦模型
+  task_models:
+    fashion_photography:
+      - "realisticVisionV60B1_v60B1VAE.safetensors"
+      - "v1-5-pruned-emaonly.safetensors"
+      
+    artistic_creation:
+      - "dreamshaper_8.safetensors"
+      - "v1-5-pruned-emaonly.safetensors"
+      
+    commercial_product:
+      - "realisticVisionV60B1_v60B1VAE.safetensors"
+      - "v1-5-pruned-emaonly.safetensors"
+      
+# 效能優化
+performance:
+  # 記憶體優化
+  memory_optimization:
+    enable_model_cpu_offload: false
+    enable_sequential_cpu_offload: false
+    enable_attention_slicing: true
+    attention_slice_size: 1
+    
+  # 計算優化
+  computation:
+    use_half_precision: true
+    use_xformers: true
+    enable_torch_compile: false
+    
+  # 快取設置
+  cache:
+    enable_model_cache: true
+    max_cache_size: 8192  # MB
+    cache_timeout: 3600  # 秒
+    
+# 品質控制
+quality_control:
+  # 輸出品質檢查
+  enable_quality_check: true
+  
+  # 品質指標
+  quality_metrics:
+    min_resolution: 256
+    max_resolution: 2048
+    min_clarity_score: 0.5
+    max_noise_level: 0.3
+    
+  # 自動重生成
+  auto_regenerate:
+    enable: true
+    max_attempts: 3
+    quality_threshold: 0.6

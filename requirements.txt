@@ -32,3 +32,11 @@ torchdiffeq
 torchsde
 transformers==4.30.2
 pillow-avif-plugin==1.4.3
+diffusers[torch]
+peft>=0.4.0
+packaging
+matplotlib
+seaborn
+scikit-learn
+sentence-transformers
+xformers==0.0.22.post7  # 可選，效能優化

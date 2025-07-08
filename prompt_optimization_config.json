@@ -1,0 +1,147 @@
+{
+  "prompt_optimization_configs": {
+    "description": "Day 3 提示詞優化配置文件",
+    "version": "1.0",
+    "created": "2024-07-04",
+    
+    "configurations": {
+      "minimal_prompt": {
+        "name": "簡潔提示詞",
+        "description": "僅使用核心特徵，測試簡潔提示詞效果",
+        "settings": {
+          "use_detailed_features": false,
+          "use_basic_categories_only": true,
+          "detailed_confidence_threshold": 0.5,
+          "max_detailed_features": 3
+        },
+        "use_case": "快速生成，降低複雜度"
+      },
+      
+      "high_confidence_only": {
+        "name": "高信心特徵",
+        "description": "僅使用高置信度特徵，確保質量",
+        "settings": {
+          "use_detailed_features": true,
+          "use_basic_categories_only": false,
+          "detailed_confidence_threshold": 0.6,
+          "max_detailed_features": 4
+        },
+        "use_case": "質量優先，減少噪音"
+      },
+      
+      "detailed_focused": {
+        "name": "詳細特徵導向",
+        "description": "包含更多詳細特徵，適合複雜場景",
+        "settings": {
+          "use_detailed_features": true,
+          "use_basic_categories_only": false,
+          "detailed_confidence_threshold": 0.2,
+          "max_detailed_features": 8
+        },
+        "use_case": "復雜場景，細節豐富"
+      },
+      
+      "balanced_approach": {
+        "name": "平衡策略",
+        "description": "平衡簡潔性與詳細性",
+        "settings": {
+          "use_detailed_features": true,
+          "use_basic_categories_only": false,
+          "detailed_confidence_threshold": 0.4,
+          "max_detailed_features": 6
+        },
+        "use_case": "通用場景，平衡效果"
+      }
+    },
+    
+    "loss_weight_schemes": {
+      "default": {
+        "name": "預設權重",
+        "description": "FashionCLIP 為主的優化權重",
+        "weights": {
+          "visual": 0.2,
+          "fashion_clip": 0.6,
+          "color": 0.2
+        }
+      },
+      
+      "balanced": {
+        "name": "平衡權重",
+        "description": "各項指標平均權重",
+        "weights": {
+          "visual": 0.33,
+          "fashion_clip": 0.34,
+          "color": 0.33
+        }
+      },
+      
+      "fashion_focused": {
+        "name": "時尚語意導向",
+        "description": "強調 FashionCLIP 語意相似度",
+        "weights": {
+          "visual": 0.15,
+          "fashion_clip": 0.7,
+          "color": 0.15
+        }
+      },
+      
+      "visual_enhanced": {
+        "name": "視覺結構導向",
+        "description": "強調視覺結構相似度",
+        "weights": {
+          "visual": 0.5,
+          "fashion_clip": 0.4,
+          "color": 0.1
+        }
+      },
+      
+      "color_enhanced": {
+        "name": "色彩匹配導向",
+        "description": "強調色彩分布相似度",
+        "weights": {
+          "visual": 0.3,
+          "fashion_clip": 0.4,
+          "color": 0.3
+        }
+      }
+    },
+    
+    "optimization_guidelines": {
+      "feature_selection": [
+        "置信度 > 0.5 的特徵通常質量較高",
+        "避免使用過多低信心特徵 (< 0.3)",
+        "基本類別 (Gender, Age, Upper Body) 應優先保留",
+        "詳細特徵數量建議控制在 3-8 個"
+      ],
+      
+      "prompt_engineering": [
+        "移除通用品質詞 (high quality, detailed 等)",
+        "專注於具體的時尚特徵描述",
+        "保持提示詞簡潔有序",
+        "負面提示詞保持簡單 (僅避免變形)"
+      ],
+      
+      "loss_optimization": [
+        "FashionCLIP 是主要語意指標，權重應 ≥ 0.4",
+        "視覺相似度權重不宜過高 (≤ 0.5)",
+        "色彩相似度適合作為輔助指標",
+        "總損失 < 0.5 為良好表現"
+      ]
+    },
+    
+    "expected_outputs": {
+      "training_results": {
+        "json_file": "訓練結果 JSON 檔案",
+        "csv_summary": "CSV 格式摘要報告",
+        "html_report": "詳細 HTML 報告",
+        "generated_images": "生成的圖片檔案"
+      },
+      
+      "comparison_results": {
+        "prompt_comparison": "提示詞配置比較結果",
+        "weight_comparison": "權重方案比較結果",
+        "optimization_suggestions": "自動優化建議"
+      }
+    }
+  }
+}

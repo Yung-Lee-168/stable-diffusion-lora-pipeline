@@ -1,17 +1,27 @@
-__pycache__
+# Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+
+# 模型檔案 (太大，不適合 Git)
 *.ckpt
 *.safetensors
 *.pth
-.DS_Store
+*.bin
+/models/**/*
+/GFPGANv1.3.pth
+/gfpgan/weights/*.pth
+model.ckpt
+
+# Stable Diffusion WebUI 相關
 /ESRGAN/*
 /SwinIR/*
 /repositories
 /venv
 /tmp
-/model.ckpt
-/models/**/*
-/GFPGANv1.3.pth
-/gfpgan/weights/*.pth
 /ui-config.json
 /outputs
 /config.json
@@ -25,20 +35,78 @@ __pycache__
 /webui-user.sh
 /interrogate
 /user.css
-/.idea
 notification.mp3
 /SwinIR
 /textual_inversion
-.vscode
 /extensions
 /test/stdout.txt
 /test/stderr.txt
 /cache.json*
 /config_states/
-/node_modules
-/package-lock.json
-/.coverage*
-/test/test_outputs
 /cache
 trace.json
 /sysinfo-????-??-??-??-??.json
+
+# LoRA 訓練相關 (大檔案和個人數據)
+/auto_test_pipeline/source_image/*
+/auto_test_pipeline/lora_train_set/*
+/auto_test_pipeline/lora_output/*
+/auto_test_pipeline/test_images/*
+lora_output/
+lora_train_set/
+test_images/
+generated_images/
+custom_output/
+training_logs/
+test_output/
+
+# 結果和日誌
+*_results/
+*.log
+*.txt
+!README.md
+!requirements.txt
+!操作指南.txt
+!*.md
+
+# 圖片檔案 (通常太大或包含個人數據)
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.gif
+*.webp
+*.tiff
+
+# 但保留範例圖片
+!example_*.png
+!sample_*.jpg
+!demo_*.png
+
+# IDE 和編輯器
+.DS_Store
+/.idea
+.vscode/
+*.swp
+*.swo
+*~
+Thumbs.db
+
+# 環境和依賴
+/node_modules
+/package-lock.json
+/.coverage*
+
+# 系統和臨時檔案
+*.tmp
+*.temp
+temp/
+tmp/
+*_backup*
+backup_*
+*.backup
+
+# 但保留重要的 Python 腳本
+!auto_test_pipeline/*.py
+!*.py
+!特徵值.py

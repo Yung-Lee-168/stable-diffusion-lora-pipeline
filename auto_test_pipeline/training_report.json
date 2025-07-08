@@ -1,0 +1,159 @@
+{
+  "analysis_time": "2025-07-05T15:39:27.164539",
+  "training_info": {
+    "train_image_count": 10,
+    "train_text_count": 10,
+    "training_folder": "10_test",
+    "repeat_count": 10,
+    "total_training_steps": 100,
+    "backup_created": false
+  },
+  "model_info": {
+    "filename": "last.safetensors",
+    "size_mb": 18.11,
+    "total_models": 1,
+    "creation_time": "2025-07-05T14:21:35.592718"
+  },
+  "test_results": {
+    "test_image_count": 10,
+    "success_rate": 100.0,
+    "test_info": {
+      "lora_model": "last.safetensors",
+      "test_time": "2025-07-05T15:31:10.165141",
+      "prompts": [
+        {
+          "prompt": "test, female, senior, summer, formal, dress, dress, midi dress, crop top, cardigan, palazzo pants, maxi skirt, lace material, polka dots, neutral colors, cropped length, elegant style",
+          "output_file": "test_01.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, spring, formal, dress, dress, wrap dress, collared shirt, trench coat, palazzo pants, wrap skirt, silk material, solid color, neutral colors, loose fit, elegant style",
+          "output_file": "test_02.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, spring, formal, dress, dress, wrap dress, dress shirt, trench coat, wide leg pants, asymmetrical skirt, chiffon material, solid color, neutral colors, oversized, minimalist style",
+          "output_file": "test_03.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, summer, formal, dress, dress, slip dress, off-shoulder top, cardigan, low-rise pants, asymmetrical skirt, cotton fabric, solid color, neutral colors, oversized, minimalist style",
+          "output_file": "test_04.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, spring, formal, dress, culottes, wrap dress, v-neck shirt, cardigan, high-waisted pants, wrap skirt, velvet texture, solid color, monochrome outfit, tailored fit, minimalist style",
+          "output_file": "test_05.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, child, summer, casual, dress, dress, shirt dress, button-down shirt, trench coat, low-rise pants, mini skirt, chiffon material, floral print, vintage colors, oversized, vintage style",
+          "output_file": "test_06.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, autumn, casual, coat, dress, shirt dress, flannel shirt, blazer jacket, high-waisted pants, mini skirt, wool texture, plaid pattern, pastel colors, oversized, preppy style",
+          "output_file": "test_07.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, spring, formal, dress, dress, shirt dress, peasant blouse, trench coat, wide leg pants, denim skirt, denim texture, solid color, vintage colors, oversized, vintage style",
+          "output_file": "test_08.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, child, spring, casual, hoodie, sweatpants, sweater dress, turtleneck, windbreaker, wide leg pants, maxi skirt, knit fabric, tie-dye pattern, pastel colors, oversized, streetwear style",
+          "output_file": "test_09.png",
+          "status": "SUCCESS"
+        },
+        {
+          "prompt": "test, female, senior, summer, casual, blouse, dress, mini dress, peasant blouse, cardigan, palazzo pants, mini skirt, chiffon material, floral print, vintage colors, oversized, vintage style",
+          "output_file": "test_10.png",
+          "status": "SUCCESS"
+        }
+      ],
+      "success_count": 10,
+      "total_count": 10
+    },
+    "image_analysis": [
+      {
+        "filename": "test_01.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 544.76
+      },
+      {
+        "filename": "test_02.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 409.9
+      },
+      {
+        "filename": "test_03.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 460.84
+      },
+      {
+        "filename": "test_04.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 480.42
+      },
+      {
+        "filename": "test_05.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 395.31
+      },
+      {
+        "filename": "test_06.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 523.14
+      },
+      {
+        "filename": "test_07.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 450.6
+      },
+      {
+        "filename": "test_08.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 411.91
+      },
+      {
+        "filename": "test_09.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 482.36
+      },
+      {
+        "filename": "test_10.png",
+        "size": "512x512",
+        "mode": "RGB",
+        "file_size_kb": 501.05
+      }
+    ]
+  },
+  "image_comparison": {
+    "original_count": 10,
+    "generated_count": 10,
+    "backup_available": false,
+    "resolution_consistency": true,
+    "similarity_scores": [
+      0.156347207149884,
+      0.44139470535754965,
+      0.28145902987125665
+    ],
+    "average_similarity": 0.2930669807928968
+  },
+  "summary": {
+    "training_completed": true,
+    "testing_completed": true,
+    "comparison_completed": true,
+    "overall_success": true
+  }
+}

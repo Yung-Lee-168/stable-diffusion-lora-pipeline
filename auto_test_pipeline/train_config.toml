@@ -1,0 +1,31 @@
+# LoRA 訓練配置檔案
+# 這個檔案可以自訂訓練參數，移除警告訊息
+
+[model]
+pretrained_model_name_or_path = "runwayml/stable-diffusion-v1-5"
+
+[data]
+train_data_dir = "lora_train_set"
+output_dir = "lora_output"
+logging_dir = "logs"
+
+[training]
+max_train_steps = 1000
+learning_rate = 0.0001
+train_batch_size = 1
+gradient_accumulation_steps = 1
+
+[optimization]
+optimizer_type = "AdamW8bit"
+mixed_precision = "fp16"
+cache_latents = true
+xformers = true
+
+[network]
+network_module = "networks.lora"
+network_dim = 8
+network_alpha = 4
+
+[sampling]
+sample_every_n_steps = 100
+sample_sampler = "euler_a"

@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-07-04T00:09:23.476964",
+  "environment": {
+    "source_dir": true,
+    "output_dir": true,
+    "has_images": true,
+    "image_count": 45,
+    "main_script": true,
+    "demo_script": true,
+    "config_file": true
+  },
+  "missing_dependencies": [],
+  "webui_running": true,
+  "ready_to_run": true
+}

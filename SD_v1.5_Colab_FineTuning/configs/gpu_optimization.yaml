@@ -1,0 +1,88 @@
+# GPU Optimization Settings for different Colab instances
+
+# Tesla T4 (16GB) - Standard Colab
+t4:
+  train_batch_size: 1
+  gradient_accumulation_steps: 8
+  mixed_precision: "fp16"
+  image_size: 512
+  lora_rank: 4
+  use_xformers: true
+  enable_cpu_offload: false
+  memory_efficient_attention: true
+  
+# Tesla V100 (16GB) - Colab Pro
+v100:
+  train_batch_size: 2
+  gradient_accumulation_steps: 4
+  mixed_precision: "fp16"
+  image_size: 512
+  lora_rank: 8
+  use_xformers: true
+  enable_cpu_offload: false
+  memory_efficient_attention: true
+
+# Tesla A100 (40GB) - Colab Pro+
+a100:
+  train_batch_size: 4
+  gradient_accumulation_steps: 2
+  mixed_precision: "fp16"
+  image_size: 768
+  lora_rank: 16
+  use_xformers: true
+  enable_cpu_offload: false
+  memory_efficient_attention: false
+
+# Tesla P100 (16GB) - Legacy
+p100:
+  train_batch_size: 1
+  gradient_accumulation_steps: 8
+  mixed_precision: "fp16"
+  image_size: 512
+  lora_rank: 4
+  use_xformers: false
+  enable_cpu_offload: true
+  memory_efficient_attention: true
+
+# Generic/Unknown GPU
+generic:
+  train_batch_size: 1
+  gradient_accumulation_steps: 4
+  mixed_precision: "fp16"
+  image_size: 512
+  lora_rank: 4
+  use_xformers: false
+  enable_cpu_offload: true
+  memory_efficient_attention: true
+
+# Memory optimization strategies
+memory_optimization:
+  # Gradient checkpointing
+  gradient_checkpointing: true
+  
+  # CPU offloading
+  offload_text_encoder: false
+  offload_vae: false
+  offload_unet: false
+  
+  # Attention optimization
+  attention_slicing: true
+  vae_slicing: true
+  
+  # Memory cleanup
+  cleanup_frequency: 50  # steps
+  
+# Performance settings
+performance:
+  # DataLoader
+  num_workers: 0  # Colab recommendation
+  pin_memory: true
+  persistent_workers: false
+  
+  # Compilation (PyTorch 2.0+)
+  compile_unet: false  # Can cause issues in Colab
+  compile_vae: false
+  
+  # Mixed precision settings
+  fp16_opt_level: "O1"
+  loss_scale: "dynamic"

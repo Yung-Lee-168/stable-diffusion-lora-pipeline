@@ -1,0 +1,14 @@
+{
+  "success": false,
+  "training_report": {},
+  "evaluation": {
+    "should_continue_inference": true,
+    "training_quality": "basic",
+    "recommendations": [],
+    "decision_reason": "找到 LoRA 模型檔案，建議進行基本測試"
+  },
+  "should_continue_inference": true,
+  "training_quality": "basic",
+  "decision_reason": "找到 LoRA 模型檔案，建議進行基本測試",
+  "recommendations": []
+}

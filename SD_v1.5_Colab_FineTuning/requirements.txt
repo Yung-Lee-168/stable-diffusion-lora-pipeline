@@ -1,0 +1,43 @@
+# SD v1.5 Colab Fine-tuning Requirements
+
+# Core dependencies
+torch==2.1.0+cu118
+torchvision==0.16.0+cu118
+torchaudio==2.1.0+cu118
+
+# Transformers and Diffusers
+transformers>=4.41.0,<5.0.0
+diffusers[torch]>=0.21.0
+accelerate>=0.21.0
+
+# LoRA and PEFT
+peft>=0.4.0
+
+# Image and data processing
+pillow>=9.0.0
+numpy>=1.21.0
+opencv-python>=4.5.0
+
+# Visualization and logging
+matplotlib>=3.5.0
+seaborn>=0.11.0
+tqdm>=4.64.0
+
+# Optional: Performance optimization
+xformers==0.0.22.post7
+
+# Optional: Enhanced features
+sentence-transformers>=2.2.0
+scikit-learn>=1.1.0
+wandb>=0.13.0
+
+# Utilities
+packaging>=21.0
+safetensors>=0.3.0
+scipy>=1.9.0
+
+# Google Colab specific
+google-colab
+
+# Note: Install with specific CUDA index for PyTorch
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118

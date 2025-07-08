@@ -1,0 +1,78 @@
+# Fashion AI Complete Package - 依賴套件列表
+
+# 核心深度學習框架
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+transformers>=4.30.0
+diffusers>=0.20.0
+accelerate>=0.20.0
+
+# 電腦視覺和圖像處理
+opencv-python>=4.8.0
+Pillow>=9.5.0
+scikit-image>=0.20.0
+
+# 機器學習和數據科學
+numpy>=1.24.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Web 框架和 API
+flask>=2.3.0
+flask-cors>=4.0.0
+requests>=2.31.0
+urllib3>=1.26.0
+
+# 數據處理和序列化
+pyyaml>=6.0
+jsonschema>=4.17.0
+python-multipart>=0.0.6
+
+# 圖表和可視化
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# 日誌和監控
+loguru>=0.7.0
+tqdm>=4.65.0
+psutil>=5.9.0
+
+# 檔案處理
+python-magic>=0.4.27
+pathlib2>=2.3.7
+
+# 數學和科學計算
+sympy>=1.12
+statsmodels>=0.14.0
+
+# 可選依賴 (效能優化)
+# 注意：這些套件可能需要特定的 CUDA 版本
+# xformers>=0.0.20  # 需要 CUDA 11.8+
+# flash-attn>=2.0.0  # 需要 CUDA 11.8+
+# bitsandbytes>=0.41.0  # 模型量化
+
+# 開發和測試工具
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
+
+# 輔助工具
+click>=8.1.0
+rich>=13.4.0
+typer>=0.9.0
+httpx>=0.24.0
+
+# 特定於 Windows 的依賴
+pywin32>=306; sys_platform == "win32"
+wmi>=1.5.1; sys_platform == "win32"
+
+# 特定於 macOS 的依賴
+pyobjc-framework-Cocoa>=9.2; sys_platform == "darwin"
+
+# 特定於 Linux 的依賴
+python-dbus>=1.3.2; sys_platform == "linux"

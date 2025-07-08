@@ -1,0 +1,122 @@
+# Model Settings for SD v1.5 Fine-tuning
+
+base_model:
+  name: "Stable Diffusion v1.5"
+  model_id: "runwayml/stable-diffusion-v1-5"
+  revision: "main"
+  cache_dir: "/content/cache"
+  
+  # Model components
+  components:
+    text_encoder: "openai/clip-vit-large-patch14"
+    vae: "stabilityai/sd-vae-ft-mse"  # Optional: better VAE
+    unet: "runwayml/stable-diffusion-v1-5"
+    scheduler: "DDPMScheduler"
+    
+scheduler:
+  # Training scheduler
+  name: "DDPMScheduler"
+  num_train_timesteps: 1000
+  beta_start: 0.00085
+  beta_end: 0.012
+  beta_schedule: "scaled_linear"
+  
+  # Inference scheduler (for validation)
+  inference_scheduler: "DDIMScheduler"
+  inference_steps: 20
+  
+text_encoder:
+  max_length: 77
+  freeze_weights: true  # Don't train text encoder
+  
+vae:
+  scaling_factor: 0.18215
+  freeze_weights: true  # Don't train VAE
+  
+unet:
+  # UNet is the main model we'll fine-tune
+  sample_size: 64  # 64x64 latent space = 512x512 image
+  in_channels: 4
+  out_channels: 4
+  layers_per_block: 2
+  attention_head_dim: 8
+  cross_attention_dim: 768
+  
+  # Training settings
+  freeze_weights: false
+  gradient_checkpointing: true
+  
+lora:
+  # LoRA configuration for efficient fine-tuning
+  enabled: true
+  
+  # Basic LoRA settings
+  rank: 4
+  alpha: 4
+  dropout: 0.1
+  
+  # Target modules for LoRA
+  target_modules:
+    - "to_k"
+    - "to_q" 
+    - "to_v"
+    - "to_out.0"
+    - "proj_in"
+    - "proj_out"
+    - "ff.net.0.proj"
+    - "ff.net.2"
+  
+  # Advanced LoRA settings
+  use_rslora: false
+  use_dora: false
+  
+# Fashion-specific settings
+fashion_clip:
+  model_id: "patrickjohncyh/fashion-clip"
+  enabled: true
+  use_for_captions: true
+  
+  # Feature extraction categories
+  categories:
+    clothing: ["dress", "shirt", "jacket", "pants", "skirt", "blouse"]
+    style: ["casual", "formal", "elegant", "sporty", "vintage", "modern"]
+    color: ["black", "white", "blue", "red", "green", "pink", "brown"]
+    pattern: ["solid", "striped", "floral", "geometric", "plain"]
+
+# Data preprocessing
+preprocessing:
+  # Image preprocessing
+  image_size: 512
+  center_crop: true
+  random_flip: true
+  normalize: true
+  
+  # Text preprocessing
+  max_sequence_length: 77
+  padding: "max_length"
+  truncation: true
+  
+# Regularization
+regularization:
+  # Noise settings
+  noise_offset: 0.0
+  input_perturbation: 0.0
+  
+  # Prior preservation (if using DreamBooth)
+  prior_preservation: false
+  num_class_images: 100
+  
+# Advanced settings
+advanced:
+  # Memory optimization
+  enable_xformers: true
+  attention_slicing: true
+  vae_slicing: true
+  
+  # Training optimizations
+  dataloader_num_workers: 0
+  pin_memory: true
+  
+  # Logging
+  log_validation: true
+  validation_epochs: 5

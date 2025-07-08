@@ -1,0 +1,172 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>LoRA 訓練完整報告</title>
+        <meta charset="utf-8">
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+            .header { background: #f4f4f4; padding: 20px; border-radius: 5px; }
+            .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+            .success { color: #28a745; }
+            .error { color: #dc3545; }
+            .info { color: #17a2b8; }
+            .warning { color: #ffc107; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            .gallery { text-align: center; }
+            .summary { font-size: 18px; font-weight: bold; }
+            .comparison-gallery { margin: 20px 0; }
+            .gallery-section { margin: 15px 0; }
+            .image-row { display: flex; flex-wrap: wrap; gap: 10px; }
+            .image-item { text-align: center; }
+            .image-item img { border: 1px solid #ddd; border-radius: 5px; }
+            .image-item p { margin: 5px 0; font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>🎯 LoRA 訓練完整報告</h1>
+            <p><strong>分析時間：</strong>2025-07-05T15:39:27.164539</p>
+            <p class="summary success">
+                整體狀態：✅ 成功
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>📊 訓練資料統計</h2>
+            <table>
+                <tr><th>項目</th><th>數值</th></tr>
+                <tr><td>訓練圖片數量</td><td>10</td></tr>
+                <tr><td>文字檔案數量</td><td>10</td></tr>
+                <tr><td>重複次數</td><td>10</td></tr>
+                <tr><td>總訓練步數</td><td>100</td></tr>
+                <tr><td>原始備份</td><td>❌ 未建立</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>📁 LoRA 模型資訊</h2>
+            <table>
+                <tr><th>項目</th><th>數值</th></tr>
+                <tr><td>檔案名稱</td><td>last.safetensors</td></tr>
+                <tr><td>檔案大小</td><td>18.11 MB</td></tr>
+                <tr><td>建立時間</td><td>2025-07-05T14:21:35.592718</td></tr>
+                <tr><td>總模型數</td><td>1</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>🎨 測試結果</h2>
+            <table>
+                <tr><th>項目</th><th>數值</th></tr>
+                <tr><td>測試圖片數量</td><td>10</td></tr>
+                <tr><td>成功率</td><td>100.0%</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>🔍 圖片比較統計</h2>
+            <table>
+                <tr><th>項目</th><th>數值</th></tr>
+                <tr><td>原始圖片數量</td><td>10</td></tr>
+                <tr><td>生成圖片數量</td><td>10</td></tr>
+                <tr><td>備份可用性</td><td>❌ 不可用</td></tr>
+                <tr><td>解析度一致性</td><td>✅ 一致</td></tr>
+            </table>
+        </div>
+        
+        
+        <div class="section">
+            <h2>📈 圖片相似度分析</h2>
+            <table>
+                <tr><th>項目</th><th>數值</th></tr>
+                <tr><td>平均相似度</td><td>0.293</td></tr>
+                <tr><td>最高相似度</td><td>0.441</td></tr>
+                <tr><td>最低相似度</td><td>0.156</td></tr>
+                <tr><td>比較圖片數</td><td>3</td></tr>
+            </table>
+        </div>
+        
+        
+        <div class="section">
+            
+        <div class="comparison-gallery">
+            <h3>🔍 圖片比較畫廊</h3>
+            <div class="gallery-grid">
+        
+        <div class="gallery-section">
+            <h4>📚 原始訓練圖片</h4>
+            <div class="image-row">
+        
+            <div class="image-item">
+                <img src="lora_train_set/10_test/253.jpg" style="max-width: 150px; max-height: 150px;">
+                <p>253.jpg</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="lora_train_set/10_test/254.jpg" style="max-width: 150px; max-height: 150px;">
+                <p>254.jpg</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="lora_train_set/10_test/255.jpg" style="max-width: 150px; max-height: 150px;">
+                <p>255.jpg</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="lora_train_set/10_test/256.jpg" style="max-width: 150px; max-height: 150px;">
+                <p>256.jpg</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="lora_train_set/10_test/257.jpg" style="max-width: 150px; max-height: 150px;">
+                <p>257.jpg</p>
+            </div>
+            
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h4>🎨 生成測試圖片</h4>
+            <div class="image-row">
+        
+            <div class="image-item">
+                <img src="test_images/test_01.png" style="max-width: 150px; max-height: 150px;">
+                <p>test_01.png</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="test_images/test_02.png" style="max-width: 150px; max-height: 150px;">
+                <p>test_02.png</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="test_images/test_03.png" style="max-width: 150px; max-height: 150px;">
+                <p>test_03.png</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="test_images/test_04.png" style="max-width: 150px; max-height: 150px;">
+                <p>test_04.png</p>
+            </div>
+            
+            <div class="image-item">
+                <img src="test_images/test_05.png" style="max-width: 150px; max-height: 150px;">
+                <p>test_05.png</p>
+            </div>
+            
+            </div>
+        </div>
+        </div>
+        
+        </div>
+        
+        <div class="section">
+            <h2>📈 效能圖表</h2>
+            <img src="training_charts.png" style="max-width: 100%; height: auto;">
+        </div>
+    </body>
+    </html>
+    

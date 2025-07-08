@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-07-03T13:43:00.208466",
+  "system_analysis": {
+    "cpu": {
+      "cores": 12,
+      "threads": 16,
+      "frequency": 2500.0,
+      "usage": 18.2
+    },
+    "memory": {
+      "total_gb": 39.73,
+      "available_gb": 22.55,
+      "usage_percent": 43.2
+    },
+    "system": {
+      "os": "Windows",
+      "version": "10.0.26100",
+      "architecture": "64bit"
+    },
+    "gpu": {
+      "has_cuda": true,
+      "gpu_count": 1,
+      "gpu_memory": 3.99951171875,
+      "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+    },
+    "available_models": {
+      "lightweight": {
+        "name": "openai/clip-vit-base-patch32",
+        "size_mb": 600,
+        "memory_requirement_gb": 2,
+        "description": "標準 CLIP - 輕量級，適合大多數電腦",
+        "fashion_optimized": false
+      },
+      "fashion_specialized": {
+        "name": "patrickjohncyh/fashion-clip",
+        "size_mb": 1200,
+        "memory_requirement_gb": 3,
+        "description": "專業時尚 CLIP - 針對服飾優化",
+        "fashion_optimized": true
+      },
+      "large_model": {
+        "name": "openai/clip-vit-large-patch14",
+        "size_mb": 1800,
+        "memory_requirement_gb": 4,
+        "description": "大型 CLIP - 最佳效果但需要更多資源",
+        "fashion_optimized": false
+      }
+    },
+    "recommendations": [
+      {
+        "model": "fashion_specialized",
+        "reason": "充足記憶體，推薦專業時尚模型（CPU 版本）",
+        "priority": 1
+      }
+    ],
+    "optimal_config": {
+      "recommended_model": "patrickjohncyh/fashion-clip",
+      "use_gpu": true,
+      "batch_size": 2,
+      "precision": "float16",
+      "cache_dir": "./models_cache"
+    }
+  },
+  "summary": {
+    "recommended_model": "fashion_specialized",
+    "model_name": "patrickjohncyh/fashion-clip",
+    "reason": "充足記憶體，推薦專業時尚模型（CPU 版本）"
+  }
+}

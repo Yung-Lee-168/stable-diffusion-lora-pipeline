@@ -1,0 +1,12 @@
+diffusers
+peft
+packaging
+matplotlib
+seaborn
+scikit-learn
+sentence-transformers
+xformers
+torch
+transformers
+pillow
+numpy

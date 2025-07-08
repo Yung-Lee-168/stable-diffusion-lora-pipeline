@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "training_report": {
+    "timestamp": "2025-07-05T23:24:21.320249",
+    "training_success": true,
+    "training_duration": 35.171833992004395,
+    "training_summary": {
+      "final_loss": null,
+      "best_loss": Infinity,
+      "loss_improvement": 0.0,
+      "convergence_status": "unknown",
+      "total_steps": 1
+    },
+    "training_metrics": {
+      "loss_values": [],
+      "learning_rates": [],
+      "steps": [
+        0
+      ],
+      "final_loss": null,
+      "best_loss": Infinity,
+      "loss_improvement": 0.0,
+      "convergence_status": "unknown"
+    },
+    "training_evaluation": {
+      "performance_grade": "poor",
+      "confidence": 0.15,
+      "issues": [
+        "損失值過高",
+        "損失未改善",
+        "訓練不穩定"
+      ],
+      "strengths": [
+        "模型檔案大小正常"
+      ],
+      "recommendations": [
+        "🔧 建議降低學習率 (嘗試 2e-5)",
+        "📊 建議增加訓練步數 (200-300步)"
+      ]
+    },
+    "model_info": {
+      "model_file": "last.safetensors",
+      "file_size_mb": 72.10930633544922,
+      "created_time": "2025-07-05T22:49:13.592034"
+    },
+    "recommendations": [
+      "🔧 建議降低學習率 (嘗試 2e-5)",
+      "📊 建議增加訓練步數 (200-300步)"
+    ]
+  },
+  "evaluation": {
+    "should_continue_inference": false,
+    "training_quality": "poor",
+    "decision_reason": "訓練表現不佳 (等級: poor, 改善: 0.00%)",
+    "recommendations": [
+      "🔧 建議調整學習率 (嘗試 5e-5 或 2e-4)",
+      "📊 建議增加訓練步數 (200-300步)",
+      "🎯 檢查訓練數據品質",
+      "⚙️ 嘗試不同的優化器設定"
+    ]
+  },
+  "should_continue_inference": false,
+  "training_quality": "poor",
+  "decision_reason": "訓練表現不佳 (等級: poor, 改善: 0.00%)",
+  "recommendations": [
+    "🔧 建議調整學習率 (嘗試 5e-5 或 2e-4)",
+    "📊 建議增加訓練步數 (200-300步)",
+    "🎯 檢查訓練數據品質",
+    "⚙️ 嘗試不同的優化器設定"
+  ]
+}
